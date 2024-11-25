@@ -1,0 +1,76 @@
+/*create table funcionario(
+codigo serial not null primary key,
+nome varchar not null,
+endereco varchar,
+sexo varchar,
+dataaniversario date,
+salario float
+);
+
+create table departamento(
+numero serial not null primary key,
+nome varchar not null
+);
+
+create table dependente(
+nome varchar(50) not null,
+parentesco varchar(50),
+dataaniversario date,
+sexo varchar(10),
+idfuncionario int not null,
+foreign key (idfuncionario) references funcionario(codigo)
+on update cascade
+on delete cascade
+)
+
+create table projeto(
+numero serial not null primary key,
+nome varchar(50) not null,
+periodo int not null,
+iddepartamento int not null,
+foreign key (iddepartamento) references departamento(numero)
+on update cascade
+on delete cascade
+)
+
+create table limpeza(
+idfuncionario int not null primary key,
+jornada float,
+idsupervisor int,
+foreign key (idfuncionario) references funcionario(codigo)
+on update cascade
+on delete cascade,
+foreign key(idsupervisor) references funcionario (codigo)
+on update cascade
+on delete cascade
+)
+
+create table secretario(
+idfuncionario int not null,
+escolaridade varchar(50),
+foreign key(idfuncionario) references funcionario(codigo)
+on update cascade
+on delete cascade
+)
+
+create table pesquisador(
+idfuncionario int not null primary key,
+area varchar(50),
+foreign key (idfuncionario) references funcionario (codigo)
+on update cascade 
+on delete cascade
+)
+
+create table projeto_pesquisador(
+idpesquisador int not null primary	key,
+idprojeto int not null,
+horas date,
+foreign key (idprojeto) references projeto(numero)
+on update cascade
+on delete cascade,
+foreign key (idpesquisador) references pesquisador(idfuncionario)
+on update cascade
+on delete cascade
+)*/
+
+
